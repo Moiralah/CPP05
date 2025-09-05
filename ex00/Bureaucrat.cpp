@@ -6,7 +6,7 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 06:10:41 by huidris           #+#    #+#             */
-/*   Updated: 2025/09/02 12:39:07 by huidris          ###   ########.fr       */
+/*   Updated: 2025/09/05 09:18:34 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ void Bureaucrat::decrement(int level)
 
 Bureaucrat::GradeTooHighException::GradeTooHighException(const std::string &name, int grade)
 	: _nameHigh(name), _gradeHigh(grade){}
+
 Bureaucrat::GradeTooHighException::~GradeTooHighException() throw(){}
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()

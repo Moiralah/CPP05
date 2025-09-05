@@ -6,7 +6,7 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 23:23:54 by huidris           #+#    #+#             */
-/*   Updated: 2025/09/02 07:40:17 by huidris          ###   ########.fr       */
+/*   Updated: 2025/09/05 09:20:38 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ class Bureaucrat
 			public:
 				const char *what() const throw();
 		};
-
 };
 
 #endif

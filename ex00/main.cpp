@@ -6,7 +6,7 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 23:19:17 by huidris           #+#    #+#             */
-/*   Updated: 2025/09/02 12:37:34 by huidris          ###   ########.fr       */
+/*   Updated: 2025/09/05 09:21:25 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int main()
 {
-
 	std::cout << "--- What if level too high ---" << std::endl;
 
 	try
@@ -23,9 +22,9 @@ int main()
 		Bureaucrat c("Passport", 15);
 	}
 
-	catch (const std::exception &a)
+	catch (const std::exception &errormsg)
 	{
-		std::cerr << "Exception : " << a.what() << std::endl;
+		std::cerr << "Exception : " << errormsg.what() << std::endl;
 		std::cerr << "No Bureaucrat created." << std::endl;
 	}
 
@@ -38,9 +37,9 @@ int main()
 		Bureaucrat c("JPJ", -2);
 	}
 
-	catch (const std::exception &a)
+	catch (const std::exception &errormsg)
 	{
-		std::cerr << "Exception : " << a.what() << std::endl;
+		std::cerr << "Exception : " << errormsg.what() << std::endl;
 		std::cerr << "No Bureaucrat created." << std::endl;
 	}
 
@@ -53,9 +52,9 @@ int main()
 		Bureaucrat c("IC", -1);
 	}
 
-	catch (const Bureaucrat::GradeTooHighException &a)
+	catch (const Bureaucrat::GradeTooHighException &errormsg)
 	{
-		std::cerr << "Exception : " << a.what() << std::endl;
+		std::cerr << "Exception : " << errormsg.what() << std::endl;
 		std::cerr << "No high level Bureaucrat created." << std::endl;
 	}
 
@@ -64,9 +63,9 @@ int main()
 		Bureaucrat d("IC", 151);
 	}
 
-	catch (const Bureaucrat::GradeTooLowException &a)
+	catch (const Bureaucrat::GradeTooLowException &errormsg)
 	{
-		std::cerr << "Exception : " << a.what() << std::endl;
+		std::cerr << "Exception : " << errormsg.what() << std::endl;
 		std::cerr << "No low level Bureaucrat created." << std::endl;
 	}
 
@@ -80,12 +79,11 @@ int main()
 		std::cout << "Bureaucrate " << b.getName()<< " new level will be " << b.getGrade() << std::endl;
 		b.decrement(21);
 		std::cout << "Bureaucrate " << b.getName()<< " new level will be " << b.getGrade() << std::endl;
-
 	}
 
-	catch (const std::exception &a)
+	catch (const std::exception &errormsg)
 	{
-		std::cerr << "Exception : " << a.what() << std::endl;
+		std::cerr << "Exception : " << errormsg.what() << std::endl;
 		std::cerr << "No level changed" << std::endl;
 	}
 
