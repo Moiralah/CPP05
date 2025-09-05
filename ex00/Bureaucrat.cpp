@@ -6,7 +6,7 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 06:10:41 by huidris           #+#    #+#             */
-/*   Updated: 2025/09/05 09:18:34 by huidris          ###   ########.fr       */
+/*   Updated: 2025/09/05 23:18:08 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,10 @@ const char *Bureaucrat::GradeTooHighException::what() const throw()
 const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return "Bureaucrat grade too low, he have no power here.";
+}
+
+std::ostream &operator<<(std::ostream &out, const Bureaucrat &copy)
+{
+	out << copy.getName() << ", bureaucrat grade " << copy.getGrade() << "." << std::endl;
+	return out;
 }

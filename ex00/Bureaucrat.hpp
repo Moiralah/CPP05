@@ -6,7 +6,7 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 23:23:54 by huidris           #+#    #+#             */
-/*   Updated: 2025/09/05 09:20:38 by huidris          ###   ########.fr       */
+/*   Updated: 2025/09/05 23:23:14 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,7 @@ class Bureaucrat
 				const char *what() const throw();
 		};
 };
+
+std::ostream& operator<<(std::ostream &out, const Bureaucrat &copy);
 
 #endif

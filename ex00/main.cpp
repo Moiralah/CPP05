@@ -6,7 +6,7 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 23:19:17 by huidris           #+#    #+#             */
-/*   Updated: 2025/09/05 09:21:25 by huidris          ###   ########.fr       */
+/*   Updated: 2025/09/05 23:24:42 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,9 @@ int main()
 	{
 		Bureaucrat b;
 		b.increment(20);
-		std::cout << "Bureaucrate " << b.getName()<< " new level will be " << b.getGrade() << std::endl;
+		std::cout << b;
 		b.decrement(21);
-		std::cout << "Bureaucrate " << b.getName()<< " new level will be " << b.getGrade() << std::endl;
+		std::cout << b;
 	}
 
 	catch (const std::exception &errormsg)
@@ -86,14 +86,6 @@ int main()
 		std::cerr << "Exception : " << errormsg.what() << std::endl;
 		std::cerr << "No level changed" << std::endl;
 	}
-
-	// std::cout << std::endl;
-	// std::cout << "--- What if there is no try/catch to catch error ---" << std::endl;
-
-	// {
-	// 	Bureaucrat b("Summons", 15);
-	// 	Bureaucrat c("Summons", -2);
-	// }
 
 	return 0;
 }
