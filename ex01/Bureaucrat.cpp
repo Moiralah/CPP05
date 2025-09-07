@@ -6,7 +6,7 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 06:10:41 by huidris           #+#    #+#             */
-/*   Updated: 2025/09/06 03:28:13 by huidris          ###   ########.fr       */
+/*   Updated: 2025/09/06 03:07:01 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void Bureaucrat::decrement(int level)
 Bureaucrat::GradeTooHighException::GradeTooHighException(const std::string &name, int grade)
 {
 	std::ostringstream oss;
-	oss << "Bureaucrat " << _nameHigh << " grade " << _gradeHigh << " too high it is illogical";
+	oss << "Bureaucrat " << name << " grade " << grade << " too high it is illogical";
 	_msg = oss.str();
 }
 

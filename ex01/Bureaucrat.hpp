@@ -6,7 +6,7 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 23:23:54 by huidris           #+#    #+#             */
-/*   Updated: 2025/09/06 03:37:06 by huidris          ###   ########.fr       */
+/*   Updated: 2025/09/06 03:05:52 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ class Bureaucrat
 		class GradeTooHighException : public std::exception
 		{
 			private:
-				std::string	_msg;
+				std::string _msg;
 
 			public:
 				GradeTooHighException(const std::string &name, int grade);
@@ -56,6 +56,6 @@ class Bureaucrat
 		};
 };
 
-std::ostream& operator<<(std::ostream &out, const Bureaucrat &copy);
+std::ostream &operator<<(std::ostream &out, const Bureaucrat &copy);
 
 #endif
