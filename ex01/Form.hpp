@@ -19,6 +19,8 @@
 #include <exception>
 #include "Bureaucrat.hpp"
 
+class Bureaucrat;
+
 class Form
 {
 	private:
@@ -35,9 +37,9 @@ class Form
 
 		~Form();
 
-		void Form::signing(const Bureaucrat &b);
+		void beSigned(const Bureaucrat &b);
 
-		std::string getName() const;
+		std::string getNameForm() const;
 		bool getSigned() const;
 		int getGradeSign() const;
 		int getGradeExecute() const;

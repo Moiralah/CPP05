@@ -16,7 +16,7 @@ FLAGS	= -Wall -Wextra -Werror -std=c++98
 
 CC		= c++
 
-SRC		= Bureaucrat.cpp main.cpp form.cpp
+SRC		= Bureaucrat.cpp main.cpp Form.cpp
 
 $(NAME): $(SRC)
 		$(CC) $(FLAGS) $(SRC) -o $(NAME)

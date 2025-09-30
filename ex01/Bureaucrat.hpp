@@ -18,6 +18,8 @@
 #include <string>
 #include <exception>
 
+class Form;
+
 class Bureaucrat
 {
 	protected:
@@ -37,6 +39,7 @@ class Bureaucrat
 
 		void increment(int);
 		void decrement(int);
+		void signForm(Form &form);
 
 		class GradeTooHighException : public std::exception
 		{

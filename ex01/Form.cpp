@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 Form::Form() : _name("unknown"), _signed(false), _gradeSign(150), _gradeExecute(150)
 {
@@ -43,7 +44,7 @@ Form::~Form()
 	std::cout << "Form " << _name << " destroyed" << std::endl;
 }
 
-void Form::signing(const Bureaucrat &b)
+void Form::beSigned(const Bureaucrat &b)
 {
 	if (b.getGrade() <= _gradeSign)
 		_signed = true;
@@ -51,7 +52,7 @@ void Form::signing(const Bureaucrat &b)
 		throw (GradeTooLowException());
 }
 
-std::string Form::getName() const
+std::string Form::getNameForm() const
 {
 	return _name;
 }
@@ -92,6 +93,6 @@ const char *Form::GradeTooLowException::what() const throw()
 
 std::ostream &operator << (std::ostream &out, const Form &copy)
 {
-	out << copy.getName() << ", need to be sign by Bureoucrat Grade " << copy.getGradeSign() << " and Execute by Grade " << copy.getGradeExecute() << std::endl;
+	out << copy.getNameForm() << ", need to be sign by Bureoucrat Grade " << copy.getGradeSign() << " and Execute by Grade " << copy.getGradeExecute() << std::endl;
 	return out;
 }
