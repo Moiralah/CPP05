@@ -6,7 +6,7 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 06:10:41 by huidris           #+#    #+#             */
-/*   Updated: 2025/09/06 19:24:51 by huidris          ###   ########.fr       */
+/*   Updated: 2025/10/07 18:36:56 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,10 @@ Form::~Form()
 
 void Form::beSigned(const Bureaucrat &b)
 {
-	if (b.getGrade() <= _gradeSign)
+	if (b.getGrade() >= _gradeSign - 10 && b.getGrade() <= _gradeSign)
 		_signed = true;
+	else if (b.getGrade() < _gradeSign - 10)
+		throw (GradeTooHighException(_name, _gradeSign, _gradeExecute));
 	else
 		throw (GradeTooLowException());
 }
@@ -75,7 +77,7 @@ int Form::getGradeExecute() const
 Form::GradeTooHighException::GradeTooHighException(const std::string &name, const int gradeSign, const int gradeExecute)
 {
 	std::ostringstream oss;
-	oss << "Form " << name << " grade to sign" << gradeSign << " grade to execute" << gradeExecute;
+	oss << "Form too low std " << name << " grade to sign +- " << gradeSign << "; grade to execute " << gradeExecute;
 	_msg = oss.str();
 }
 
