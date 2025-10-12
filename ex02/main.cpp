@@ -6,12 +6,12 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 23:19:17 by huidris           #+#    #+#             */
-/*   Updated: 2025/10/12 18:50:44 by huidris          ###   ########.fr       */
+/*   Updated: 2025/10/12 18:58:02 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 int main()
 {
