@@ -6,7 +6,7 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 06:10:41 by huidris           #+#    #+#             */
-/*   Updated: 2025/10/13 02:43:39 by huidris          ###   ########.fr       */
+/*   Updated: 2025/10/13 03:04:07 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,12 @@ std::string ShruberryCreationForm::putAsciiTree()
 {
 	std::string tree;
 
-	tree < "    O      \n";
-	tree < "   0O0     \n";
-	tree < "  00O00    \n";
-	tree < " 000O000   \n";
-	tree < "    O      \n";
-	tree < "    O     \n";
+	tree += "    O      \n";
+	tree += "   0O0     \n";
+	tree += "  00O00    \n";
+	tree += " 000O000   \n";
+	tree += "    O      \n";
+	tree += "    O     \n";
 
 	return tree;
 }
