@@ -6,12 +6,12 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 23:23:54 by huidris           #+#    #+#             */
-/*   Updated: 2025/10/13 02:46:37 by huidris          ###   ########.fr       */
+/*   Updated: 2025/10/24 17:14:13 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SHRUBERRYCREATIONFORM_HPP
-# define SHRUBERRYCREATIONFORMFORM_HPP
+# define SHRUBERRYCREATIONFORM_HPP
 
 #include "AForm.hpp"
 #include <fstream>
@@ -29,6 +29,7 @@ class ShruberryCreationForm : public AForm
 
 		~ShruberryCreationForm();
 
+		void beSigned(const Bureaucrat &b);
 		const std::string getTarget() const;
 		void createFile();
 		std::string putAsciiTree();

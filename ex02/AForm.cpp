@@ -6,7 +6,7 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 06:10:41 by huidris           #+#    #+#             */
-/*   Updated: 2025/10/12 19:00:12 by huidris          ###   ########.fr       */
+/*   Updated: 2025/10/24 17:46:59 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ AForm::~AForm()
 void AForm::beSigned(const Bureaucrat &b)
 {
 	if (b.getGrade() >= _gradeSign - 10 && b.getGrade() <= _gradeSign)
-		_signed = true;
+		setSigned();
 	else if (b.getGrade() < _gradeSign - 10)
 		throw (GradeTooHighException(_name, _gradeSign, _gradeExecute));
 	else
@@ -62,6 +62,11 @@ std::string AForm::getNameForm() const
 bool AForm::getSigned() const
 {
 	return _signed;
+}
+
+void AForm::setSigned()
+{
+	_signed = true;
 }
 
 int AForm::getGradeSign() const

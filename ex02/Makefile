@@ -6,7 +6,7 @@
 #    By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/31 23:24:00 by huidris           #+#    #+#              #
-#    Updated: 2025/10/12 18:57:37 by huidris          ###   ########.fr        #
+#    Updated: 2025/10/24 17:55:09 by huidris          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ FLAGS	= -Wall -Wextra -Werror -std=c++98
 
 CC		= c++
 
-SRC		= Bureaucrat.cpp main.cpp AForm.cpp
+SRC		= Bureaucrat.cpp main.cpp AForm.cpp ShruberryCreationForm.cpp
 
 $(NAME): $(SRC)
 		$(CC) $(FLAGS) $(SRC) -o $(NAME)

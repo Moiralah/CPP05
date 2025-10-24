@@ -6,7 +6,7 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 23:23:54 by huidris           #+#    #+#             */
-/*   Updated: 2025/10/12 18:59:16 by huidris          ###   ########.fr       */
+/*   Updated: 2025/10/24 17:45:04 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ class AForm
 
 		std::string getNameForm() const;
 		bool getSigned() const;
+		void setSigned();
 		int getGradeSign() const;
 		int getGradeExecute() const;
 

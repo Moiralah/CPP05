@@ -6,7 +6,7 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 06:10:41 by huidris           #+#    #+#             */
-/*   Updated: 2025/10/12 18:57:52 by huidris          ###   ########.fr       */
+/*   Updated: 2025/10/24 17:52:14 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void Bureaucrat::decrement(int level)
 	_grade = _grade + level;
 }
 
-void Bureaucrat::signForm(Form &form)
+void Bureaucrat::signForm(AForm &form)
 {
 	try
 	{

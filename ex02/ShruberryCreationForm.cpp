@@ -6,19 +6,19 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 06:10:41 by huidris           #+#    #+#             */
-/*   Updated: 2025/10/13 03:04:07 by huidris          ###   ########.fr       */
+/*   Updated: 2025/10/24 18:31:49 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShruberryCreationForm.hpp"
 
-ShruberryCreationForm::ShruberryCreationForm() : AForm(), _target("")
+ShruberryCreationForm::ShruberryCreationForm() : AForm("Shruberry Creation", 145, 137), _target("")
 {
-	std::cout << "Constructing Shruberry Creation Form" << std::endl;
+	std::cout << "Constructing Shruberry Creation Form for no known target" << std::endl;
 }
 
 ShruberryCreationForm::ShruberryCreationForm(const std::string &target)
-: AForm(), _target(target)
+: AForm("Shruberry Creation Form", 145, 137), _target(target)
 {
 	std::cout << "Constructing Shruberry Creation Form for " << _target << std::endl;
 }
@@ -45,6 +45,17 @@ ShruberryCreationForm::~ShruberryCreationForm()
 	std::cout << "Shruberry Creation Form destroyed" << std::endl;
 }
 
+void ShruberryCreationForm::beSigned(const Bureaucrat &b)
+{
+	if (b.getGrade() == 145)
+		setSigned();
+	else if (b.getGrade() > 145)
+		throw GradeTooLowException();
+	else
+		throw GradeTooHighException(getNameForm(), 145, 137);
+}
+
+
 const std::string ShruberryCreationForm::getTarget() const
 {
 	return _target;
@@ -52,8 +63,12 @@ const std::string ShruberryCreationForm::getTarget() const
 
 void ShruberryCreationForm::createFile()
 {
-	std::ofstream file(_target + "_shruberry");
+	std::ostringstream name;
+	name << _target << "_shruberry";
+
+	std::ofstream file(name.str().c_str());
 	file << putAsciiTree();
+	file.close();
 }
 
 std::string ShruberryCreationForm::putAsciiTree()
