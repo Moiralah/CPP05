@@ -6,7 +6,7 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 23:23:54 by huidris           #+#    #+#             */
-/*   Updated: 2025/10/24 17:45:04 by huidris          ###   ########.fr       */
+/*   Updated: 2025/11/01 09:54:42 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ class AForm
 		~AForm();
 
 		virtual void beSigned(const Bureaucrat &b) = 0;
+		virtual void execute(Bureaucrat const &executor) const = 0;
 
 		std::string getNameForm() const;
 		bool getSigned() const;
@@ -57,6 +58,18 @@ class AForm
 		};
 
 		class GradeTooLowException : public std::exception
+		{
+			public:
+				const char *what() const throw();
+		};
+
+		class FormNotSigned : public std::exception
+		{
+			public:
+				const char *what() const throw();
+		};
+
+		class GradeExecuteNotEnough : public std::exception
 		{
 			public:
 				const char *what() const throw();

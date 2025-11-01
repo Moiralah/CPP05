@@ -6,7 +6,7 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 23:19:17 by huidris           #+#    #+#             */
-/*   Updated: 2025/10/24 18:19:40 by huidris          ###   ########.fr       */
+/*   Updated: 2025/11/01 10:20:57 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,12 @@ int main()
 {
 	{
 		Bureaucrat b("Ali", 145);
+		Bureaucrat executive("Alia", 137);
 		ShruberryCreationForm a("Borang");
 
 		b.signForm(a);
-		b.increment(135);
+		executive.executeForm(a);
+
 	}
 
 	// {

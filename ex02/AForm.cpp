@@ -6,7 +6,7 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 06:10:41 by huidris           #+#    #+#             */
-/*   Updated: 2025/10/24 17:46:59 by huidris          ###   ########.fr       */
+/*   Updated: 2025/11/01 10:24:28 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ AForm::AForm() : _name("unknown"), _signed(false), _gradeSign(150), _gradeExecut
 AForm::AForm(const std::string &name, const int grade, const int execute)
 : _name(name), _signed(false), _gradeSign(grade), _gradeExecute(execute)
 {
-	std::cout << "Constructing " << _name << " Form with level "<< _gradeSign;
+	std::cout << "Constructing " << _name << " with level "<< _gradeSign;
 	std::cout << " to sign, grade " << _gradeExecute << " to execute" << std::endl;
 }
 
@@ -52,6 +52,16 @@ void AForm::beSigned(const Bureaucrat &b)
 		throw (GradeTooHighException(_name, _gradeSign, _gradeExecute));
 	else
 		throw (GradeTooLowException());
+}
+
+void AForm::execute(Bureaucrat const &executor)const
+{
+	if (getSigned() == true && executor.getGrade() <= getGradeExecute())
+		std::cout << "Approved. Execute accordingly." << std::endl;
+	else if (getSigned() == false)
+		throw (FormNotSigned());
+	else
+		throw (GradeExecuteNotEnough());
 }
 
 std::string AForm::getNameForm() const
@@ -96,6 +106,16 @@ const char *AForm::GradeTooHighException::what() const throw()
 const char *AForm::GradeTooLowException::what() const throw()
 {
 	return "Form grade too low, he have no power here.";
+}
+
+const char *AForm::FormNotSigned::what() const throw()
+{
+	return "Form must be signed to continue the process.";
+}
+
+const char *AForm::GradeExecuteNotEnough::what() const throw()
+{
+	return "Not a valid executor. No task performed";
 }
 
 std::ostream &operator << (std::ostream &out, const AForm &copy)

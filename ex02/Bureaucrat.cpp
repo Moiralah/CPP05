@@ -6,7 +6,7 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 06:10:41 by huidris           #+#    #+#             */
-/*   Updated: 2025/10/24 17:52:14 by huidris          ###   ########.fr       */
+/*   Updated: 2025/11/01 10:18:52 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,19 @@ void Bureaucrat::signForm(AForm &form)
 	catch (std::exception &errormsg)
 	{
 		std::cout << _name << " couldn't sign " << form.getNameForm() << " because " << errormsg.what() << std::endl;
+	}
+}
+
+void Bureaucrat::executeForm(AForm &form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << _name << " execute " << form.getNameForm() << std::endl;
+	}
+	catch (std::exception &errormsg)
+	{
+		std::cout << _name << " couldn't execute " << form.getNameForm() << " because " << errormsg.what() << std::endl;
 	}
 }
 

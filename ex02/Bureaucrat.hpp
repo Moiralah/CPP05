@@ -6,7 +6,7 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 23:23:54 by huidris           #+#    #+#             */
-/*   Updated: 2025/10/24 17:51:23 by huidris          ###   ########.fr       */
+/*   Updated: 2025/11/01 10:17:42 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ class Bureaucrat
 		void increment(int);
 		void decrement(int);
 		void signForm(AForm &form);
+		void executeForm(AForm &form);
 
 		class GradeTooHighException : public std::exception
 		{

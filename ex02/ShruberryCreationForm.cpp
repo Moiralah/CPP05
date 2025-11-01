@@ -6,7 +6,7 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 06:10:41 by huidris           #+#    #+#             */
-/*   Updated: 2025/10/24 18:31:49 by huidris          ###   ########.fr       */
+/*   Updated: 2025/11/01 10:26:56 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ ShruberryCreationForm::ShruberryCreationForm() : AForm("Shruberry Creation", 145
 ShruberryCreationForm::ShruberryCreationForm(const std::string &target)
 : AForm("Shruberry Creation Form", 145, 137), _target(target)
 {
-	std::cout << "Constructing Shruberry Creation Form for " << _target << std::endl;
+	std::cout << "Constructing Shruberry Creation Form for target " << _target << std::endl;
 }
 
 ShruberryCreationForm::ShruberryCreationForm(const ShruberryCreationForm &other)
@@ -55,13 +55,25 @@ void ShruberryCreationForm::beSigned(const Bureaucrat &b)
 		throw GradeTooHighException(getNameForm(), 145, 137);
 }
 
+void ShruberryCreationForm::execute(Bureaucrat const &executor)const
+{
+	if (getSigned() == true && executor.getGrade() <= getGradeExecute())
+	{
+		std::cout << "Creating File and Planting Tree inside" << std::endl;
+		createFile();
+	}
+	else if (getSigned() == false)
+		throw (FormNotSigned());
+	else
+		throw (GradeExecuteNotEnough());
+}
 
 const std::string ShruberryCreationForm::getTarget() const
 {
 	return _target;
 }
 
-void ShruberryCreationForm::createFile()
+void ShruberryCreationForm::createFile() const
 {
 	std::ostringstream name;
 	name << _target << "_shruberry";
@@ -71,7 +83,7 @@ void ShruberryCreationForm::createFile()
 	file.close();
 }
 
-std::string ShruberryCreationForm::putAsciiTree()
+std::string ShruberryCreationForm::putAsciiTree() const
 {
 	std::string tree;
 
