@@ -6,7 +6,7 @@
 #    By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/31 23:24:00 by huidris           #+#    #+#              #
-#    Updated: 2025/10/24 17:55:09 by huidris          ###   ########.fr        #
+#    Updated: 2025/11/01 23:52:06 by huidris          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ FLAGS	= -Wall -Wextra -Werror -std=c++98
 
 CC		= c++
 
-SRC		= Bureaucrat.cpp main.cpp AForm.cpp ShruberryCreationForm.cpp
+SRC		= Bureaucrat.cpp main.cpp AForm.cpp ShruberryCreationForm.cpp \
+			RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 
 $(NAME): $(SRC)
 		$(CC) $(FLAGS) $(SRC) -o $(NAME)
@@ -25,6 +26,7 @@ all: $(NAME)
 
 clean:
 	clear
+	rm -f *_shruberry
 
 fclean: clean
 	rm -rf $(NAME)

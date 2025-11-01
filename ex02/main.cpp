@@ -6,13 +6,15 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 23:19:17 by huidris           #+#    #+#             */
-/*   Updated: 2025/11/01 10:20:57 by huidris          ###   ########.fr       */
+/*   Updated: 2025/11/01 23:43:20 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 #include "ShruberryCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 
 int main()
@@ -24,26 +26,27 @@ int main()
 
 		b.signForm(a);
 		executive.executeForm(a);
-
 	}
 
-	// {
-	// 	Bureaucrat b("Warganegara", 150);
-	// 	Form a("Borang", 15, 15);
+	{
+		Bureaucrat b("Yaya", 72);
+		Bureaucrat executive("Boboiboy", 45);
+		Bureaucrat executive2("Cika", 55);
+		RobotomyRequestForm a("Robocop");
 
-	// 	b.increment(135);
-	// 	std::cout << a;
-	// 	std::cout << b;
-	// 	b.signForm(a);
-	// }
+		b.signForm(a);
+		executive.executeForm(a);
+		executive2.executeForm(a);
+	}
 
-	// {
-	// 	Bureaucrat b("Raja", 1);
-	// 	Form a("Borang FIFA", 15, 15);
+	{
+		Bureaucrat b("Anwar", 25);
+		Bureaucrat executive("Rafizi", 5);
+		PresidentialPardonForm a("Najib");
 
-	// 	std::cout << a;
-	// 	b.signForm(a);
-	// }
+		b.signForm(a);
+		executive.executeForm(a);
+	}
 
 	return 0;
 }

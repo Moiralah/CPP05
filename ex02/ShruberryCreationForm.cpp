@@ -6,7 +6,7 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 06:10:41 by huidris           #+#    #+#             */
-/*   Updated: 2025/11/01 10:26:56 by huidris          ###   ########.fr       */
+/*   Updated: 2025/11/01 22:27:15 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void ShruberryCreationForm::execute(Bureaucrat const &executor)const
 {
 	if (getSigned() == true && executor.getGrade() <= getGradeExecute())
 	{
-		std::cout << "Creating File and Planting Tree inside" << std::endl;
+		std::cout << "Creating File and Planting Tree inside file" << std::endl;
 		createFile();
 	}
 	else if (getSigned() == false)
