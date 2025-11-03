@@ -6,7 +6,7 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 06:10:41 by huidris           #+#    #+#             */
-/*   Updated: 2025/09/06 03:28:13 by huidris          ###   ########.fr       */
+/*   Updated: 2025/11/03 23:30:24 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,9 @@ int Bureaucrat::getGrade() const
 
 void Bureaucrat::increment(int level)
 {
-	if  (_grade - level < 1)
-		throw GradeTooHighException(_name, _grade);
 	_grade = _grade - level;
+	if  (_grade < 1)
+		throw GradeTooHighException(_name, _grade);
 }
 
 void Bureaucrat::decrement(int level)
@@ -71,7 +71,7 @@ void Bureaucrat::decrement(int level)
 Bureaucrat::GradeTooHighException::GradeTooHighException(const std::string &name, int grade)
 {
 	std::ostringstream oss;
-	oss << "Bureaucrat " << _nameHigh << " grade " << _gradeHigh << " too high it is illogical";
+	oss << "Bureaucrat " << name << " grade " << grade << " too high it is illogical";
 	_msg = oss.str();
 }
 

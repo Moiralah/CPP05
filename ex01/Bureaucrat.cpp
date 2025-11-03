@@ -6,7 +6,7 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 06:10:41 by huidris           #+#    #+#             */
-/*   Updated: 2025/09/06 03:07:01 by huidris          ###   ########.fr       */
+/*   Updated: 2025/11/03 23:31:00 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,9 @@ int Bureaucrat::getGrade() const
 
 void Bureaucrat::increment(int level)
 {
-	if  (_grade - level < 1)
-		throw GradeTooHighException(_name, _grade);
 	_grade = _grade - level;
+	if  (_grade < 1)
+		throw GradeTooHighException(_name, _grade);
 }
 
 void Bureaucrat::decrement(int level)

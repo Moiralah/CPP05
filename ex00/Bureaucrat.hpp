@@ -6,7 +6,7 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 23:23:54 by huidris           #+#    #+#             */
-/*   Updated: 2025/09/06 03:37:06 by huidris          ###   ########.fr       */
+/*   Updated: 2025/11/03 23:26:46 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Bureaucrat
 		Bureaucrat();
 		Bureaucrat(const std::string &name, int grade);
 		Bureaucrat(const Bureaucrat& copy);
-		Bureaucrat& operator=(const Bureaucrat& copy);
+		Bureaucrat &operator=(const Bureaucrat& copy);
 
 		~Bureaucrat();
 
@@ -56,6 +56,6 @@ class Bureaucrat
 		};
 };
 
-std::ostream& operator<<(std::ostream &out, const Bureaucrat &copy);
+std::ostream &operator<<(std::ostream &out, const Bureaucrat &copy);
 
 #endif
