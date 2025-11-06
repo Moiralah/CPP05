@@ -6,7 +6,7 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 23:19:17 by huidris           #+#    #+#             */
-/*   Updated: 2025/11/04 00:27:18 by huidris          ###   ########.fr       */
+/*   Updated: 2025/11/06 20:48:14 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main()
 	try
 	{
 		Bureaucrat b;
-		Form a("Borang", 15, 15);
+		Form a("Borang", 15, 151);
 
 		b.signForm(a);
 	}
@@ -57,7 +57,9 @@ int main()
 		Form a("Borang FIFA", 15, 15);
 
 		std::cout << a;
-		b.signForm(a);
+		//b.signForm(a);
+		a.beSigned(b);
+		std::cout << "here"<<std::endl;
 	}
 
 	catch(std::exception &error_message)

@@ -6,7 +6,7 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 06:10:41 by huidris           #+#    #+#             */
-/*   Updated: 2025/10/07 18:36:56 by huidris          ###   ########.fr       */
+/*   Updated: 2025/11/06 21:02:13 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@ Form::Form() : _name("unknown"), _signed(false), _gradeSign(150), _gradeExecute(
 Form::Form(const std::string &name, const int grade, const int execute)
 : _name(name), _signed(false), _gradeSign(grade), _gradeExecute(execute)
 {
+	if (grade < 1 || execute < 1)
+		throw (std::runtime_error("too high"));
+	else if (grade > 150 || execute > 150)
+		throw (std::runtime_error("too low"));
 	std::cout << "Constructing " << _name << " Form with level "<< _gradeSign;
 	std::cout << " to sign, grade " << _gradeExecute << " to execute" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 06:10:41 by huidris           #+#    #+#             */
-/*   Updated: 2025/11/04 00:47:30 by huidris          ###   ########.fr       */
+/*   Updated: 2025/11/06 19:19:50 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void PresidentialPardonForm::execute(Bureaucrat const &executor)const
 	if (getSigned() == true && executor.getGrade() <= getGradeExecute())
 		std::cout << getTarget() << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 	else if (getSigned() == false)
-		throw (FormNotSigned());
+		throw (std::runtime_error("Form not signed"));
 	else
 		throw (GradeExecuteNotEnough());
 }

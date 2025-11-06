@@ -6,13 +6,13 @@
 #    By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/31 23:24:00 by huidris           #+#    #+#              #
-#    Updated: 2025/11/04 20:46:00 by huidris          ###   ########.fr        #
+#    Updated: 2025/11/06 20:04:03 by huidris          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= form
 
-FLAGS	= -Wall -Wextra -Werror -std=c++98
+FLAGS	= -Wall -Wextra -Werror -std=c++11
 
 CC		= c++
 
